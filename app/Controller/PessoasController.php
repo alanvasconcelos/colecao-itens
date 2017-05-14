@@ -40,7 +40,7 @@ class PessoasController extends AppController {
     }
     
     if ($this->Pessoa->delete($id)) {
-      $this->Flash->success('Pessoas deletada com sucesso');
+      $this->Flash->success('Pessoa deletada com sucesso');
     } else {
       $this->Flash->error('Erro ao deletar pessoa');
     }

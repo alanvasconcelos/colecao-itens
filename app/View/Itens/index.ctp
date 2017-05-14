@@ -16,7 +16,7 @@
     <td><?php echo $this->Html->Link($iten['Iten']['nome'], array('controller' => 'itens', 'action' => 'view', $iten['Iten']['id'])); ?></td>
     <td><?php echo $iten['Iten']['quantidade']; ?></td>
     <td><?php echo $this->html->Link('Editar', array('controller' => 'itens', 'action' => 'edit', $iten['Iten']['id'])); ?> |
-        <?php echo $this->Form->postLink('Deletar', array('controller' => 'itens', 'action' => 'delete'), array('confirm' => 'Deseja deletar o item?')); ?></td>
+        <?php echo $this->Form->postLink('Deletar', array('action' => 'delete', $iten['Iten']['id']), array('confirm' => 'Deseja deletar o item?')); ?></td>
     <td><?php echo $iten['Iten']['created']; ?></td>
     <td><?php echo $iten['Iten']['modified']; ?></td>
     <td><?php echo $iten['Iten']['pessoa_id']; ?></td>

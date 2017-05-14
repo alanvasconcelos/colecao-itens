@@ -42,6 +42,20 @@ class ItensController extends AppController {
     }
   }
   
+  public function delete($id) {
+    if ($this->request->is('get')) {
+      throw new MethodNotAllowedException();
+    }
+    
+    if ($this->Iten->delete($id)) {
+      $this->Flash->success('Item deletado com sucesso');
+    } else {
+      $this->Flash->error('Erro ao deletar item');
+    }
+    
+    $this->redirect(array('action' => 'index'));
+  }
+  
   public function seeItens($id = null) {
     //$this->set('itens', $this->Iten->find('all', array('fields' => array('nome', 'quantidade'))));
     
